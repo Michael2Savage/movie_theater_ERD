@@ -1,0 +1,29 @@
+CREATE TABLE customer(
+	customer_id SERIAL PRIMARY KEY, 
+	first_name VARCHAR(10),
+	last_name VARCHAR(10),
+	ticket_price NUMERIC(5,2),
+	concession_name VARCHAR(25)
+);
+
+
+CREATE TABLE tickets(
+	ticket_id SERIAL PRIMARY KEY,
+	FOREIGN KEY(ticket_price) REFERENCES customer(ticket_price),
+	ticket_name VARCHAR(30)
+);
+
+
+CREATE TABLE concessions(
+	concession_id SERIAL PRIMARY KEY,
+	concession_price INT,
+	FOREIGN KEY(concession_name) REFERENCES customer(concession_name)
+);
+
+
+CREATE TABLE movies(
+	movie_id SERIAL PRIMARY KEY,
+	genre VARCHAR(30),
+	FOREIGN KEY(ticket_name) REFERENCES tickets(ticket_name),
+	movie_length_minutes INT
+);

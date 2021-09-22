@@ -1,0 +1,2 @@
+Using the customer table as somewhat of the "point" table, this table holds customer info, ticket purchase info,
+and concession info. Movie information is linked to ticket name, thus all tables are linked!
